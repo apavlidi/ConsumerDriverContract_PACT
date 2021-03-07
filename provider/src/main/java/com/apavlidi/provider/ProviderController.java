@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProviderController {
 
-  public final List<Post> POSTS = asList(new Post(1, "apavlidi", "Post text 1"),
-      new Post(2, "Bob", "Post text 2"));
+  public final List<Post> POSTS = asList(new Post(1, "apavlidi", "First post text"),
+      new Post(2, "Bob", "Second post text"));
 
   @GetMapping(value = "/post/{postId}", produces = "application/json")
   public ResponseEntity<Post> retrievePost(@PathVariable Integer postId) {

@@ -10,6 +10,6 @@ public class ClientController {
 
   @GetMapping("/sanitize")
   public ResponseEntity<String> sanitizePost() {
-    return new RestTemplate().getForEntity("http://localhost:8080/post/1", String.class);
+    return new RestTemplate().getForEntity("http://localhost:8080/post/2", String.class);
   }
 }

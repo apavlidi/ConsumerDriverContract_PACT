@@ -20,20 +20,20 @@ public class ClientControllerTest {
   public PactProviderRuleMk2 mockProvider
       = new PactProviderRuleMk2("test_provider", "localhost", 8080, this);
 
-  @Pact(consumer = "test_consumer")
+  @Pact(consumer = "test_consumer2")
   public RequestResponsePact createPactContract(PactDslWithProvider builder) {
     Map<String, String> headers = new HashMap<>();
     headers.put("Content-Type", "application/json");
 
     PactDslJsonBody body = new PactDslJsonBody()
-        .numberType("id", 1)
-        .stringType("author", "apavlidi")
-        .stringType("text", "Post text 1");
+        .numberType("id", 2)
+        .stringType("author", "Bob")
+        .stringType("text", "Second post text");
 
     return builder
         .given("post exists")
           .uponReceiving("get a single post request")
-          .path("/post/1")
+          .path("/post/2")
           .method("GET")
         .willRespondWith()
           .status(200)
@@ -51,7 +51,7 @@ public class ClientControllerTest {
 
     assertThat(response.getStatusCode().value()).isEqualTo(200);
     assertThat(response.getHeaders().get("Content-Type").contains("application/json")).isTrue();
-    assertThat(response.getBody()).contains("id", "1", "author", "apavlidi", "text", "Post text 1");
+    assertThat(response.getBody()).contains("id", "2", "author", "Bob", "text", "Second post text");
   }
 
 }

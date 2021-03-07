@@ -14,22 +14,18 @@ import org.springframework.web.context.ConfigurableWebApplicationContext;
 
 @RunWith(PactRunner.class)
 @Provider("test_provider")
-@PactFolder("pacts")
+@PactFolder("../pactFiles")
 public class PactProviderTest {
-  @TestTarget
-  public final Target target = new HttpTarget("http", "localhost", 8082, "/spring-rest");
 
-  private static ConfigurableWebApplicationContext application;
+  @TestTarget
+  public final Target target = new HttpTarget("http", "localhost", 8080, "/");
 
   @BeforeClass
   public static void start() {
-    application = (ConfigurableWebApplicationContext)
-        SpringApplication.run(PactTemplate.class);
+    ConfigurableWebApplicationContext application = (ConfigurableWebApplicationContext)
+        SpringApplication.run(ProviderApplication.class);
   }
 
-  @State("test GET")
-  public void toGetState() { }
-
-  @State("test POST")
-  public void toPostState() { }
+  @State("post exists")
+  public void postExists() { }
 }

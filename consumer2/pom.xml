@@ -8,11 +8,11 @@
     <version>2.4.3</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
+  <groupId>com.apavlidi</groupId>
+  <artifactId>client2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>client</name>
-  <description>Demo project for Spring Boot</description>
+  <name>client2</name>
+  <description>Client 2 that uses the provider</description>
   <properties>
     <java.version>11</java.version>
   </properties>
