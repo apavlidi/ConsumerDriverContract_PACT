@@ -32,13 +32,13 @@ public class ClientControllerTest {
 
     return builder
         .given("post exists")
-        .uponReceiving("get a single post request")
-        .path("/post/1")
-        .method("GET")
+          .uponReceiving("get a single post request")
+          .path("/post/1")
+          .method("GET")
         .willRespondWith()
-        .status(200)
-        .headers(headers)
-        .body(body)
+          .status(200)
+          .headers(headers)
+          .body(body)
         .toPact();
   }
 
