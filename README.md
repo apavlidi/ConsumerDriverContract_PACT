@@ -1,4 +1,4 @@
-# ConsumerDriverContract_PACT
+# Consumer Driven Contract Testing
 The project showcase how to do Consumer Driven Contract testing using Pact. Please find more in the official site [here](https://pact.io/)
 
 ## Overview
