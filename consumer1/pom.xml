@@ -9,7 +9,7 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.apavlidi</groupId>
-  <artifactId>client1</artifactId>
+  <artifactId>consumer1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>client1</name>
   <description>Client 1 that uses the provider</description>
