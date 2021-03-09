@@ -1,23 +1,26 @@
 # Consumer Driven Contract Testing
-The project showcase how to do Consumer Driven Contract testing using Pact. Please find more in the official site [here](https://pact.io/)
+The project showcase how to do Consumer-Driven Contract testing using Pact. Please find more on the official site [here](https://pact.io/)
 
 ## Overview
-In the project you will find three modules. The `provider` module is the provider who exposes a REST endpoint that other clients use. The `consumer1` & `consumer2` 
-are using that REST endpoint that the provider exposes. Imagine that in a microservice architecture there are more consumers and providers. To simlify the project
-here we just only three "systems". Both consumers and provider have their own test to verify that the contract is respected on both sides and it will prevent from
+In the project, you will find three modules. The `provider` module is the provider that exposes a REST endpoint that other clients use. The `consumer1`, `consumer2` & `consumer3`. 
+are using that REST endpoint that the provider exposes. Imagine that in a microservice architecture there are more consumers and providers. To simplify the project
+here we just only three "systems". Both consumers and provider have their test to verify that the contract is respected on both sides and it will prevent from
 any incident happening.
 
 ### How to run
 
 #### Create the contract for consumer1 ~ provider
 1. Navigate to the consumer1. Run `cd consumer1`
-2. Run `mvn test` to run the tests of the consumer1 module. The command will producer the contract between the consumer1 and provider based on the assumptions that the
+2. Run `mvn test` to run the tests of the consumer1 module. The command will producer the contract between consumer1 and provider based on the assumptions that 
 consumer1 is making. The contract file can be found in the folder called `pactFiles`.
 
 #### Create the contract for consumer2 ~ provider
 1. Navigate to the consumer2. Run `cd consumer2`
-2. Run `mvn test` to run the tests of the consumer2 module. The command will producer the contract between the consumer2 and provider based on the assumptions that the
-consumer2 is making. The contract file can be found in the folder called `pactFiles` along with the other contracts.
+2. Run `mvn test` to run the tests of the consumer2 module. The command will producer the contract between the consumer2 and provider based on the assumptions that the consumer2 is making. The contract file can be found in the folder called `pactFiles` along with the other contracts.
+
+#### Create the contract for consumer3 ~ provider
+1. Navigate to the consumer3. Run `cd consumer3`
+2. Run `mvn test` to run the tests of the consumer3 module. The command will producer the contract between the consumer3 and provider based on the assumptions that the consumer3 is making. Consumer3 is kinda special because it tests a different state of the system where the provider is throwing a `BAD_REQUEST` when it's receiving a postId as 3 in the URL parameter.
 
 #### Verify the contracts on the provider side.
 1. Navigate to the provider. Run `cd provider`
