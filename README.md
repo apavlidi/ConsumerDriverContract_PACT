@@ -9,23 +9,44 @@ any incident happening.
 
 ### How to run
 
-#### Create the contract for consumer1 ~ provider
+<details><summary><b>Create the contract for consumer1 ~ provider</b></summary>
+<p>
+
 1. Navigate to the consumer1. Run `cd consumer1`
 2. Run `mvn test` to run the tests of the consumer1 module. The command will producer the contract between consumer1 and provider based on the assumptions that 
 consumer1 is making. The contract file can be found in the folder called `pactFiles`.
 
-#### Create the contract for consumer2 ~ provider
+</p>
+</details>
+
+
+
+<details><summary><b>Create the contract for consumer2 ~ provider</b></summary>
+<p>
+
 1. Navigate to the consumer2. Run `cd consumer2`
 2. Run `mvn test` to run the tests of the consumer2 module. The command will producer the contract between the consumer2 and provider based on the assumptions that the consumer2 is making. The contract file can be found in the folder called `pactFiles` along with the other contracts.
 
-#### Create the contract for consumer3 ~ provider
+</p>
+</details>
+
+<details><summary><b>Create the contract for consumer3 ~ provider</b></summary>
+<p>
+
 1. Navigate to the consumer3. Run `cd consumer3`
 2. Run `mvn test` to run the tests of the consumer3 module. The command will producer the contract between the consumer3 and provider based on the assumptions that the consumer3 is making. Consumer3 is kinda special because it tests a different state of the system where the provider is throwing a `BAD_REQUEST` when it's receiving a postId as 3 in the URL parameter.
 
-#### Verify the contracts on the provider side.
+</p>
+</details>
+
+<details><summary><b>Verify the contracts on the provider side.</b></summary>
+<p>
+
 1. Navigate to the provider. Run `cd provider`
-2. Run `mvn test` to run the tests of the provider module. The command will retrieve the contracts from the `pactFiles` that both consumers created and it will verify
-the assumptions that they made by testing the actual REST endpoint.
+2. Run `mvn test` to run the tests of the provider module. The command will retrieve the contracts from the `pactFiles` that both consumers created and it will verify the assumptions that they made by testing the actual REST endpoint.
+
+</p>
+</details>
 
 ### Things to consider
 You have to run both consumer and provider tests before you deploy any change to make sure you are not breaking the contract between those two.
