@@ -1,4 +1,4 @@
-package com.apavlidi.client1;
+package com.apavlidi.consumer1;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

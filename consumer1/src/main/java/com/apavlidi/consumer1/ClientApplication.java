@@ -1,4 +1,4 @@
-package com.apavlidi.client2;
+package com.apavlidi.consumer1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

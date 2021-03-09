@@ -1,4 +1,4 @@
-package com.apavlidi.client1;
+package com.apavlidi.consumer1;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -20,7 +20,7 @@ public class ClientControllerTest {
   public PactProviderRuleMk2 mockProvider
       = new PactProviderRuleMk2("test_provider", "localhost", 8080, this);
 
-  @Pact(consumer = "test_consumer2")
+  @Pact(consumer = "consumer1")
   public RequestResponsePact createPactContract(PactDslWithProvider builder) {
     Map<String, String> headers = new HashMap<>();
     headers.put("Content-Type", "application/json");

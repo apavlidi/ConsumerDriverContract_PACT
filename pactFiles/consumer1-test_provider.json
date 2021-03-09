@@ -3,14 +3,14 @@
         "name": "test_provider"
     },
     "consumer": {
-        "name": "test_consumer2"
+        "name": "consumer1"
     },
     "interactions": [
         {
             "description": "get a single post request",
             "request": {
                 "method": "GET",
-                "path": "/post/2"
+                "path": "/post/1"
             },
             "response": {
                 "status": 200,
@@ -18,9 +18,9 @@
                     "Content-Type": "application/json"
                 },
                 "body": {
-                    "author": "Bob",
-                    "id": 2,
-                    "text": "Second post text"
+                    "author": "apavlidi",
+                    "id": 1,
+                    "text": "First post text"
                 },
                 "matchingRules": {
                     "body": {

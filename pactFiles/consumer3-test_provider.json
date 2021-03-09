@@ -1,0 +1,33 @@
+{
+    "provider": {
+        "name": "test_provider"
+    },
+    "consumer": {
+        "name": "consumer3"
+    },
+    "interactions": [
+        {
+            "description": "get a single post request",
+            "request": {
+                "method": "GET",
+                "path": "/post/3"
+            },
+            "response": {
+                "status": 400
+            },
+            "providerStates": [
+                {
+                    "name": "post does not exist"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.0"
+        }
+    }
+}

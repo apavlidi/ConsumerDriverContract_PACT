@@ -1,4 +1,4 @@
-package com.apavlidi.client2;
+package com.apavlidi.consumer2;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -20,7 +20,7 @@ public class ClientControllerTest {
   public PactProviderRuleMk2 mockProvider
       = new PactProviderRuleMk2("test_provider", "localhost", 8080, this);
 
-  @Pact(consumer = "test_consumer2")
+  @Pact(consumer = "consumer2")
   public RequestResponsePact createPactContract(PactDslWithProvider builder) {
     Map<String, String> headers = new HashMap<>();
     headers.put("Content-Type", "application/json");
@@ -47,7 +47,7 @@ public class ClientControllerTest {
   public void givenGet_whenSendRequest_shouldReturn200WithProperHeaderAndBody() {
     ClientController controller = new ClientController();
 
-    ResponseEntity<String> response = controller.sanitizePost();
+    ResponseEntity<String> response = controller.migratePost();
 
     assertThat(response.getStatusCode().value()).isEqualTo(200);
     assertThat(response.getHeaders().get("Content-Type").contains("application/json")).isTrue();

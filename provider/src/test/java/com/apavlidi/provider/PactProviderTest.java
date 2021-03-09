@@ -28,4 +28,7 @@ public class PactProviderTest {
 
   @State("post exists")
   public void postExists() { }
+
+  @State("post does not exist")
+  public void postDoesNotExist() { }
 }

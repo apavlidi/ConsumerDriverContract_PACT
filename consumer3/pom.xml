@@ -11,10 +11,10 @@
   </parent>
 
   <groupId>com.apavlidi</groupId>
-  <artifactId>consumer1</artifactId>
+  <artifactId>consumer3</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>consumer1</name>
-  <description>Consumer 1 that uses the provider</description>
+  <name>consumer3</name>
+  <description>Consumer 3 that uses the provider</description>
 
   <properties>
     <java.version>11</java.version>

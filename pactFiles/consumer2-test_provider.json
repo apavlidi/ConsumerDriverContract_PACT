@@ -3,7 +3,7 @@
         "name": "test_provider"
     },
     "consumer": {
-        "name": "test_consumer1"
+        "name": "consumer2"
     },
     "interactions": [
         {
@@ -18,9 +18,9 @@
                     "Content-Type": "application/json"
                 },
                 "body": {
-                    "author": "apavlidi",
+                    "author": "Bob",
                     "id": 2,
-                    "text": "Post text 1"
+                    "text": "Second post text"
                 },
                 "matchingRules": {
                     "body": {
