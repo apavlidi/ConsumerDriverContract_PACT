@@ -8,8 +8,8 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class ClientController {
 
-  @GetMapping("/sanitize")
-  public ResponseEntity<String> sanitizePost() {
+  @GetMapping("/consume1")
+  public ResponseEntity<String> consume1() {
     return new RestTemplate().getForEntity("http://localhost:8080/post/1", String.class);
   }
 }
