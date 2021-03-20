@@ -30,8 +30,8 @@ public class ClientControllerTest {
 
   @Test(expected = HttpClientErrorException.BadRequest.class)
   @PactVerification("test_provider")
-  public void givenGet_whenSendRequest_shouldReturn200WithProperHeaderAndBody() {
-    new ClientController().processPost();
+  public void givenGet_whenSendRequest_withInvalidId_shouldReturn400() {
+    new ClientController().consume3();
   }
 
 }

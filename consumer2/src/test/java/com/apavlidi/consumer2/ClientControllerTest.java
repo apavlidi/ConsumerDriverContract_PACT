@@ -45,9 +45,7 @@ public class ClientControllerTest {
   @Test
   @PactVerification("test_provider")
   public void givenGet_whenSendRequest_shouldReturn200WithProperHeaderAndBody() {
-    ClientController controller = new ClientController();
-
-    ResponseEntity<String> response = controller.migratePost();
+    ResponseEntity<String> response = new ClientController().consume2();
 
     assertThat(response.getStatusCode().value()).isEqualTo(200);
     assertThat(response.getHeaders().get("Content-Type").contains("application/json")).isTrue();

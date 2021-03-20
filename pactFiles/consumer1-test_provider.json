@@ -18,7 +18,7 @@
                     "Content-Type": "application/json"
                 },
                 "body": {
-                    "author": "apavlidi",
+                    "author": "Alice",
                     "id": 1,
                     "text": "First post text"
                 },

@@ -27,7 +27,7 @@ public class ClientControllerTest {
 
     PactDslJsonBody body = new PactDslJsonBody()
         .numberType("id", 1)
-        .stringType("author", "apavlidi")
+        .stringType("author", "Alice")
         .stringType("text", "First post text");
 
     return builder
@@ -45,13 +45,11 @@ public class ClientControllerTest {
   @Test
   @PactVerification("test_provider")
   public void givenGet_whenSendRequest_shouldReturn200WithProperHeaderAndBody() {
-    ClientController controller = new ClientController();
-
-    ResponseEntity<String> response = controller.sanitizePost();
+    ResponseEntity<String> response = new ClientController().consume1();
 
     assertThat(response.getStatusCode().value()).isEqualTo(200);
     assertThat(response.getHeaders().get("Content-Type").contains("application/json")).isTrue();
-    assertThat(response.getBody()).contains("id", "1", "author", "apavlidi", "text", "First post text");
+    assertThat(response.getBody()).contains("id", "1", "author", "Alice", "text", "First post text");
   }
 
 }

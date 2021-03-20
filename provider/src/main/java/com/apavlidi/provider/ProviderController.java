@@ -12,17 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProviderController {
 
-  public static final int WRONG_ID = 3;
+  public static final Post POST_1 = new Post(1, "Alice", "First post text");
+  public static final Post POST_2 = new Post(2, "Bob", "Second post text");
 
-  public final List<Post> POSTS = asList(new Post(1, "apavlidi", "First post text"),
-      new Post(2, "Bob", "Second post text"));
+  public final List<Post> POSTS = asList(POST_1, POST_2);
 
   @GetMapping(value = "/post/{postId}", produces = "application/json")
   public ResponseEntity<Post> retrievePost(@PathVariable Integer postId) {
-    if (postId == WRONG_ID) {
+    try {
+      final Post post = POSTS.get(postId);
+      return new ResponseEntity<>(post, HttpStatus.OK);
+    } catch (IndexOutOfBoundsException e) {
       return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
-    final Post post = postId == POSTS.get(0).id ? POSTS.get(0) : POSTS.get(1);
-    return new ResponseEntity<>(post, HttpStatus.OK);
   }
 }
