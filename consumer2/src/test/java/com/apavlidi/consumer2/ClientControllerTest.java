@@ -22,8 +22,7 @@ public class ClientControllerTest {
 
   @Pact(consumer = "consumer2")
   public RequestResponsePact createPactContract(PactDslWithProvider builder) {
-    Map<String, String> headers = new HashMap<>();
-    headers.put("Content-Type", "application/json");
+    Map<String, String> headers = Map.of("Content-Type", "application/json");
 
     PactDslJsonBody body = new PactDslJsonBody()
         .numberType("id", 2)
