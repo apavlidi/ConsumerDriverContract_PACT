@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProviderController {
 
-  public static final Post POST_1 = new Post(1, "Alice", "First post text");
-  public static final Post POST_2 = new Post(2, "Bob", "Second post text");
+  public static final Post POST_1 = new Post(0, "Alice", "First post text");
+  public static final Post POST_2 = new Post(1, "Bob", "Second post text");
 
   public final List<Post> POSTS = asList(POST_1, POST_2);
 
